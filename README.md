@@ -51,6 +51,7 @@ But FFT algorithm requires the knowledge of shape and dimensionality of used arr
 One more thing: if b returns false then some error has happened. In order to protect user from debugging into 3rdparty library to figure out what happened I decided to return error description as C-style string (because some people have problems with std::string performance). So the interface became looking like this: 
  
  const char * error = NULL; // error description
+ 
  b = FFT(A,B,n,error); // FFT from A to B where A and B are 1D arrays with n elements
  
  b = FFT(A,B,n,m,error); // FFT from A to B where A and B are matrices (2D arrays) with n rows and m columns
@@ -60,6 +61,7 @@ One more thing: if b returns false then some error has happened. In order to pro
 But how about the inverse transform? The flag can be used to tell the forward transform from inverse but I thought that different function names would be easier: FFT for forward transform and IFFT for inverse transform: 
  
  const char * error = NULL; // error description
+ 
  b = FFT(A,B,n,error); // forward FFT from A to B where A and B are 1D arrays with n elements
  
  b = FFT(A,B,n,m,error); // forward FFT from A to B where A and B are matrices (2D arrays) with n rows and m columns
