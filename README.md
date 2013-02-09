@@ -43,25 +43,33 @@ A: By convenience of API I mean the interface somewhat similar to that found in 
 But FFT algorithm requires the knowledge of shape and dimensionality of used arrays. Most multidimensional array implementations can provide this information but they do it in different ways and I wanted something very generic. So I decided to create functions with the same name but different signature depending on the number of dimensions: 
  
  b = FFT(A,B,n); // FFT from A to B where A and B are 1D arrays with n elements
+ 
  b = FFT(A,B,n,m); // FFT from A to B where A and B are matrices (2D arrays) with n rows and m columns
+ 
  b = FFT(A,B,n,m,l); // FFT from A to B where A and B are 3D arrays with n rows, m columns and l depth number;
  
 One more thing: if b returns false then some error has happened. In order to protect user from debugging into 3rdparty library to figure out what happened I decided to return error description as C-style string (because some people have problems with std::string performance). So the interface became looking like this: 
  
  const char * error = NULL; // error description
  b = FFT(A,B,n,error); // FFT from A to B where A and B are 1D arrays with n elements
+ 
  b = FFT(A,B,n,m,error); // FFT from A to B where A and B are matrices (2D arrays) with n rows and m columns
+ 
  b = FFT(A,B,n,m,l,error); // FFT from A to B where A and B are 3D arrays with n rows, m columns and l depth number;
  
 But how about the inverse transform? The flag can be used to tell the forward transform from inverse but I thought that different function names would be easier: FFT for forward transform and IFFT for inverse transform: 
  
  const char * error = NULL; // error description
  b = FFT(A,B,n,error); // forward FFT from A to B where A and B are 1D arrays with n elements
+ 
  b = FFT(A,B,n,m,error); // forward FFT from A to B where A and B are matrices (2D arrays) with n rows and m columns
+ 
  b = FFT(A,B,n,m,l,error); // forward FFT from A to B where A and B are 3D arrays with n rows, m columns and l depth number;
  
  b = IFFT(B,A,n,error); // inverse FFT from B to A where A and B are 1D arrays with n elements
+ 
  b = IFFT(B,A,n,m,error); // inverse FFT from B to A where A and B are matrices (2D arrays) with n rows and m columns
+ 
  b = IFFT(B,A,n,m,l,error); // inverse FFT from B to A where A and B are 3D arrays with n rows, m columns and l depth number;
  
 Beyond that there are only two settings: 
