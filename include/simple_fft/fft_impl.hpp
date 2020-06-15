@@ -33,10 +33,7 @@ enum FFT_direction
 // via "complement and compare" method
 inline bool isPowerOfTwo(const size_t num)
 {
-    if ((num == 0) || !(num & (~num + 1)))
-        return false;
-
-    return true;
+    return num && (!(num & (num - 1)));
 }
 
 inline bool checkNumElements(const size_t num_elements, const char *& error_description)
