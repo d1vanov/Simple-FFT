@@ -1,3 +1,10 @@
+/**
+ * Copyright (c) 2013-2020 Dmitry Ivanov
+ *
+ * This file is a part of Simple-FFT project and is distributed under the terms
+ * of MIT license: https://opensource.org/licenses/MIT
+ */
+
 #ifndef __SIMPLE_FFT__COPY_ARRAY_HPP
 #define __SIMPLE_FFT__COPY_ARRAY_HPP
 

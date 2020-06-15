@@ -1,3 +1,10 @@
+/**
+ * Copyright (c) 2013-2020 Dmitry Ivanov
+ *
+ * This file is a part of Simple-FFT project and is distributed under the terms
+ * of MIT license: https://opensource.org/licenses/MIT
+ */
+
 #ifndef __SIMPLE_FFT__FFT_HPP__
 #define __SIMPLE_FFT__FFT_HPP__
 

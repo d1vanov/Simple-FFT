@@ -1,10 +1,8 @@
-/*
- * ----------------------------------------------------------------------------
- * "THE BEER-WARE LICENSE" (Revision 42):
- * Dmitry Ivanov <dm.vl.ivanov@gmail.com> wrote this file. As long as you retain
- * this notice you can do whatever you want with this stuff. If we meet some day,
- * and you think this stuff is worth it, you can buy me a beer in return.
- * ----------------------------------------------------------------------------
+/**
+ * Copyright (c) 2013-2020 Dmitry Ivanov
+ *
+ * This file is a part of Simple-FFT project and is distributed under the terms
+ * of MIT license: https://opensource.org/licenses/MIT
  */
 
 #ifndef __SIMPLE_FFT__FFT_H__
